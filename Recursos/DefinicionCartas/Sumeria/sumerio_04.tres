@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="DefinicionCarta" load_steps=2 format=3 uid="uid://sumeria04"]
+
+[ext_resource type="Script" path="res://Scripts/Card/Resources/DefinicionCarta.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+id_carta = "sumeria_04"
+nombre_carta = "Estabilidad"
+dano = 4
+faccion = "Sumeria"
+efecto_descripcion = ""
+ruta_escena = "res://Scenes/Cards/culturas/CartaSumeria.tscn"
+ruta_sprite_base = "res://sprites/Cartas/Sumeria/4 sumerio peke.png"
+ruta_sprite_calma = ""
+ruta_sprite_agresiva = ""
+ruta_icono = ""
+efectos = Array[Dictionary]([{
+"id": "condicional",
+"parametros": {
+"condicion": "turno_defensa",
+"efecto_contenido": {
+"id": "robo",
+"parametros": {
+"cartas_a_robar": 2,
+"condicion": ""
+}
+}
+}
+}])
+efectos_ids = Array[String]([])
+efectos_parametros = Array[Dictionary]([])
+bonus_dano_calma = 0
+bonus_dano_agresiva = 0
+efectos_calma = Array[Dictionary]([])
+efectos_agresiva = Array[Dictionary]([])
+mejora_sobrescribe_efectos = false
+rareza = "poco_comun"
+descripcion_personalizada = "En Bloqueo: Roba 2."
+tags = Array[String](["robo", "defensa", "condicional", "flujo"])

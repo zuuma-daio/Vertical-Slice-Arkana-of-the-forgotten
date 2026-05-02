@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4pv3ggpo57jn"]
+
+[ext_resource type="Texture2D" uid="uid://djwelajg2mxjj" path="res://sprites/oficiales/Stormy Forest Virtual Background in Corporal Memphis Style.png" id="1_prrt5"]
+[ext_resource type="Texture2D" uid="uid://dnnnajr6cdxxm" path="res://sprites/oficiales/iconos/reliquia_cartas.png" id="2_di7bi"]
+[ext_resource type="Texture2D" uid="uid://bsvjuoahxipy3" path="res://sprites/oficiales/iconos/Reliquia_escudo.webp" id="3_cqtaa"]
+[ext_resource type="Texture2D" uid="uid://c2lhcx8e42x6" path="res://sprites/oficiales/iconos/reliquia_robo.png" id="4_tf8l0"]
+
+[node name="PantallaReliquias" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.54006, 1.30048)
+texture = ExtResource("1_prrt5")
+centered = false
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 232.0
+offset_right = 1210.0
+offset_bottom = 315.0
+theme_override_font_sizes/font_size = 60
+text = "RELIQUIA INICIAL"
+
+[node name="Reliquia1" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.004
+anchor_bottom = 0.007
+offset_left = 420.0
+offset_top = 425.0
+offset_right = 676.32
+offset_bottom = 681.44
+icon = ExtResource("2_di7bi")
+flat = true
+alignment = 0
+autowrap_mode = 2
+icon_alignment = 1
+
+[node name="Reliquia2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 425.0
+offset_right = 1092.0
+offset_bottom = 689.0
+icon = ExtResource("3_cqtaa")
+flat = true
+
+[node name="Reliquia3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1236.0
+offset_top = 425.0
+offset_right = 1500.0
+offset_bottom = 689.0
+icon = ExtResource("4_tf8l0")
+flat = true
+
+[node name="Descripcion" type="Label" parent="."]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 720.0
+offset_right = 1504.0
+offset_bottom = 984.0
+theme_override_font_sizes/font_size = 25
+text = "Selecciona una reliquia"
+horizontal_alignment = 1
+autowrap_mode = 2

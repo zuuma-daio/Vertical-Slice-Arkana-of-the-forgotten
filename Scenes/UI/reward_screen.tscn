@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv5jce40caqqb"]
+
+[ext_resource type="Script" path="res://Scripts/UI/reward_screen.gd" id="1_tpcae"]
+
+[node name="RewardScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tpcae")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.160784)
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1078.0
+
+[node name="BotonOpcion1" type="Button" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 212.0
+offset_right = 567.0
+offset_bottom = 738.0
+autowrap_mode = 3
+
+[node name="BotonOpcion2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 212.0
+offset_right = 1133.0
+offset_bottom = 731.0
+autowrap_mode = 3
+
+[node name="BotonOpcion3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1394.0
+offset_top = 212.0
+offset_right = 1684.0
+offset_bottom = 735.0
+autowrap_mode = 3
+
+[node name="BotonContinuar" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 591.0
+offset_top = 416.0
+offset_right = 1388.0
+offset_bottom = 601.0
+text = "Continuar"

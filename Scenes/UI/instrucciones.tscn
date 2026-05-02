@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cosg53und3jo2"]
+
+[node name="Instrucciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BotonInstrucciones" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.015
+offset_left = 1727.0
+offset_top = 32.0
+offset_right = 1836.28
+offset_bottom = 130.8
+theme_override_font_sizes/font_size = 25
+text = "Ayuda (?)"
+icon_alignment = 1
+
+[node name="VentanaInstrucciones" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 29.0
+offset_right = 1868.0
+offset_bottom = 1055.0
+mouse_filter = 2
+
+[node name="Fondo" type="ColorRect" parent="VentanaInstrucciones"]
+layout_mode = 2
+color = Color(0.45218, 0.3864, 0.69, 0.662745)
+
+[node name="Titulo" type="Label" parent="VentanaInstrucciones"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.909804, 0.933333, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Instrucciones"
+horizontal_alignment = 1
+
+[node name="BotonCerrar" type="Button" parent="VentanaInstrucciones/Titulo"]
+layout_mode = 2
+anchor_right = 0.014
+anchor_bottom = 0.765
+offset_left = 1688.0
+offset_right = 1802.41
+offset_bottom = 85.165
+theme_override_font_sizes/font_size = 25
+text = "Cerrar (x)"
+
+[node name="Texto" type="Label" parent="VentanaInstrucciones/Titulo"]
+layout_mode = 2
+offset_top = 111.0
+offset_right = 1828.0
+offset_bottom = 1027.0
+theme_override_colors/font_color = Color(0.909804, 0.933333, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "     • Derrota al enemigo utilizando las cartas en tu mano, estas cartas te ayudarán tanto para defender, como para atacar
+     • Cada palo tiene su propio efecto base, junto a su daño:
+           -Jomon: Recupera cartas de tu pila de descartes al mazo. Combo = Roba 2
+           -Mapuche: Roba cartas de tu mazo igual al daño. Combo = daño aumentado
+           -Nok: Inflije daño de quemadura despues del turno de defensa con un 50%. 
+            Combo = La quemadura es segura y aumenta en la mitad del daño realizado
+           -Sumeria: Gana escudo igual al daño. Combo = Escudo +3
+     • Combina 2 del mismo palo para activar efectos de combo.
+           -Pueden ser mezcladas solo cartas bajas del 1 al 2, con cartas del 3 al 7.
+           -Las combinaciones pueden ser con distintos palos, pero solo aplican su efecto base.
+           -Cartas 8-10: solo pueden jugarse solas.
+     • Si usas un palo, el enemigo será inmune a sus efectos en el siguiente turno.
+     • Usa 'Bloquear' para defender. Si tu defensa es menor que el ataque del enemigo, perderás un almavida
+     • Solo son 2 vidas, con el segundo daño es fin del juego.
+
+     ¡Derrota al enemigo!"
+autowrap_mode = 2

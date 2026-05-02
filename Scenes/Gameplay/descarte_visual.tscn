@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcp4tj285hw3q"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/descarte_visual.gd" id="1_s4myf"]
+[ext_resource type="Texture2D" uid="uid://bedcv4vkdql8p" path="res://sprites/oficiales/cartas pequeñas/card_dorso_graveyard_v2_pequeña.webp" id="2_aav5s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljwyl"]
+size = Vector2(233, 316)
+
+[node name="DescarteVisual" type="Node2D"]
+position = Vector2(120, 850)
+script = ExtResource("1_s4myf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 1.05)
+texture = ExtResource("2_aav5s")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 42.0
+offset_top = -137.0
+offset_right = 81.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 39
+text = "34"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ljwyl")
+
+[node name="PosicionEntradaCarta" type="Marker2D" parent="."]

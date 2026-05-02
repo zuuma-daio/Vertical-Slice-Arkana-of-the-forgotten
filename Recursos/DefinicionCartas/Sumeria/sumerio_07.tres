@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="DefinicionCarta" load_steps=2 format=3 uid="uid://sumeria07"]
+
+[ext_resource type="Script" path="res://Scripts/Card/Resources/DefinicionCarta.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+id_carta = "sumeria_07"
+nombre_carta = "Dominio Defensivo"
+dano = 7
+faccion = "Sumeria"
+efecto_descripcion = ""
+ruta_escena = "res://Scenes/Cards/culturas/CartaSumeria.tscn"
+ruta_sprite_base = "res://sprites/Cartas/Sumeria/7 sumerio peke.png"
+ruta_sprite_calma = ""
+ruta_sprite_agresiva = ""
+ruta_icono = ""
+efectos = Array[Dictionary]([{
+"id": "aura",
+"parametros": {
+"duracion": "2_turnos",
+"estadistica": "defensa",
+"objetivo": "jugador",
+"valor": 4
+}
+}])
+efectos_ids = Array[String]([])
+efectos_parametros = Array[Dictionary]([])
+bonus_dano_calma = 0
+bonus_dano_agresiva = 0
+efectos_calma = Array[Dictionary]([])
+efectos_agresiva = Array[Dictionary]([])
+mejora_sobrescribe_efectos = false
+rareza = "raro"
+descripcion_personalizada = "Durante 2 turnos: Protección +4."
+tags = Array[String](["proteccion", "defensa", "turnos", "aura"])

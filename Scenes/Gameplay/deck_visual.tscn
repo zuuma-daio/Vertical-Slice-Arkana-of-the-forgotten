@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7mu7aefeq1ql"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/deck_visual.gd" id="1_xbxnh"]
+[ext_resource type="Texture2D" uid="uid://b6qk2awh5mm3" path="res://sprites/oficiales/cartas pequeñas/card_dorso_pequeña.webp" id="2_i0pcm"]
+
+[node name="DeckVisual" type="Node2D"]
+position = Vector2(100, 500)
+script = ExtResource("1_xbxnh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+texture = ExtResource("2_i0pcm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 42.0
+offset_top = -129.0
+offset_right = 125.0
+offset_bottom = -59.0
+theme_override_font_sizes/font_size = 39
+text = "34"
+
+[node name="PosicionSalidaCarta" type="Marker2D" parent="."]
+position = Vector2(1, 2)

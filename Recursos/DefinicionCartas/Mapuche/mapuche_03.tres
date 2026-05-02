@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="DefinicionCarta" load_steps=2 format=3 uid="uid://mapuche03"]
+
+[ext_resource type="Script" path="res://Scripts/Card/Resources/DefinicionCarta.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+id_carta = "mapuche_03"
+nombre_carta = "Retorno Silente"
+dano = 3
+faccion = "Mapuche"
+efecto_descripcion = ""
+ruta_escena = "res://Scenes/Cards/culturas/CartaMapuche.tscn"
+ruta_sprite_base = "res://sprites/Cartas/Mapuche/3 mapuche peke.png"
+ruta_sprite_calma = ""
+ruta_sprite_agresiva = ""
+ruta_icono = ""
+efectos = Array[Dictionary]([{
+"id": "condicional",
+"parametros": {
+"condicion": "turno_defensa",
+"efecto_contenido": {
+"id": "proteccion",
+"parametros": {
+"cantidad_proteccion": 8,
+"solo_turno_defensa": true
+}
+}
+}
+}])
+efectos_ids = Array[String]([])
+efectos_parametros = Array[Dictionary]([])
+bonus_dano_calma = 0
+bonus_dano_agresiva = 0
+efectos_calma = Array[Dictionary]([])
+efectos_agresiva = Array[Dictionary]([])
+mejora_sobrescribe_efectos = false
+rareza = "poco_comun"
+descripcion_personalizada = "En Bloqueo: Protección +8."
+tags = Array[String](["defensa", "proteccion", "condicional"])

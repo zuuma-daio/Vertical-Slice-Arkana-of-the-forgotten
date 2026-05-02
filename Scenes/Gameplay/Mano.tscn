@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvn7kwpww5pd6"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Mano.gd" id="1_nt47d"]
+[ext_resource type="PackedScene" uid="uid://dmuognwbtjx63" path="res://Scenes/Cards/Carta.tscn" id="2_dmawo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kijtp"]
+radius = 1010.0
+
+[node name="Mano" type="Node2D"]
+position = Vector2(733.889, 1329)
+script = ExtResource("1_nt47d")
+Radio_inclinacion = 1010
+Angulo_carta = 270.0
+Angulo_Limite = 65.0
+Maximo_dispersion_angulo = 7.0
+separacion_hover_grados = 3.0
+elevacion_hover_px = 30.0
+escala_hover = 3.0
+
+[node name="DebugCarta" parent="." instance=ExtResource("2_dmawo")]
+position = Vector2(0, -1010)
+rotation = 6.28319
+escala_base = 1.2
+
+[node name="DebugPosicionMano" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_kijtp")

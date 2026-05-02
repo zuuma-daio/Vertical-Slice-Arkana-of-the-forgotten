@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://dmuognwbtjx63"]
+
+[ext_resource type="Script" path="res://Scripts/Card/Carta.gd" id="1_uq10j"]
+[ext_resource type="Texture2D" uid="uid://b3m6oukuoeww4" path="res://sprites/72738738-05b4-47bd-a7ab-adcda04d83cc.png" id="2_8grw1"]
+[ext_resource type="Texture2D" uid="uid://csmx04qhbm18e" path="res://sprites/Cartas/Jomon/10 Jomon peke.png" id="3_brhe7"]
+[ext_resource type="Texture2D" uid="uid://cf7u3ib7f65j4" path="res://sprites/FuegoAnim.webp" id="4_uike0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8y4p"]
+size = Vector2(168, 229)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7uep"]
+atlas = ExtResource("4_uike0")
+region = Rect2(166, 0, 165, 241)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slmke"]
+atlas = ExtResource("4_uike0")
+region = Rect2(331, 0, 165, 241)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5p55"]
+atlas = ExtResource("4_uike0")
+region = Rect2(1, 0, 165, 241)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxr5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7uep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slmke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5p55")
+}],
+"loop": true,
+"name": &"quemar",
+"speed": 10.0
+}]
+
+[node name="Carta" type="Node2D"]
+visible = false
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_uq10j")
+escala_base = null
+
+[node name="BrilloFondo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.556863)
+position = Vector2(0.5, -7.00001)
+scale = Vector2(0.170898, 0.300781)
+texture = ExtResource("2_8grw1")
+
+[node name="SpriteCarta" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.736747, 0.74384)
+texture = ExtResource("3_brhe7")
+
+[node name="LabelNombre" type="Label" parent="SpriteCarta"]
+offset_left = -78.7244
+offset_top = 37.6425
+offset_right = 84.276
+offset_bottom = 67.6425
+theme_override_font_sizes/font_size = 18
+text = "nombre carta"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelDaño" type="Label" parent="SpriteCarta"]
+offset_left = -114.015
+offset_top = -143.848
+offset_right = -42.0148
+offset_bottom = -90.8473
+theme_override_font_sizes/font_size = 18
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelFaccion" type="Label" parent="SpriteCarta"]
+offset_left = -46.1488
+offset_top = -1.34438
+offset_right = 25.8508
+offset_bottom = 65.657
+theme_override_font_sizes/font_size = 18
+text = "Pueblo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelEfecto" type="RichTextLabel" parent="SpriteCarta"]
+offset_left = -68.0
+offset_top = 86.0
+offset_right = 56.0
+offset_bottom = 124.0
+text = "Efecto base"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, -0.5)
+shape = SubResource("RectangleShape2D_m8y4p")
+
+[node name="FuegoAnimado" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(16.25, -14.25)
+scale = Vector2(1, 0.934)
+sprite_frames = SubResource("SpriteFrames_nxr5j")
+animation = &"quemar"

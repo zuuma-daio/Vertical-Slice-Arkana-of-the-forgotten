@@ -1,0 +1,18 @@
+{
+  "ataque": {
+    "prompt": "Describe cómo {personaje} responde al ataque de {enemigo}, mencionando la carta {carta_jugada} solo si es relevante. Tono ceremonial y profético.",
+    "max_tokens": 45
+  },
+  "defensa": {
+    "prompt": "{enemigo} contraataca. El viento susurra advertencias al {personaje}. Describe cómo interpreta el peligro y decide defenderse.",
+    "max_tokens": 45
+  },
+  "estado_critico": {
+    "prompt": "El alma-vida de {personaje} flaquea. Describe la tensión sin mencionar números ni mecánicas.",
+    "max_tokens": 45
+  },
+  "inicio_turno": {
+    "prompt": "El destino abre una nueva senda para {personaje}. Describe el inicio del turno con misterio.",
+    "max_tokens": 45
+  }
+}

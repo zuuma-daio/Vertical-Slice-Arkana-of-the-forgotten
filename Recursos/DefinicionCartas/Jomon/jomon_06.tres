@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="DefinicionCarta" load_steps=2 format=3 uid="uid://jomon06"]
+
+[ext_resource type="Script" path="res://Scripts/Card/Resources/DefinicionCarta.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+id_carta = "jomon_06"
+nombre_carta = "Ajuste del Flujo"
+dano = 6
+faccion = "Jomon"
+efecto_descripcion = ""
+ruta_escena = "res://Scenes/Cards/culturas/CartaJomon.tscn"
+ruta_sprite_base = "res://sprites/Cartas/Jomon/6 Jomon peke.png"
+ruta_sprite_calma = ""
+ruta_sprite_agresiva = ""
+ruta_icono = ""
+efectos = Array[Dictionary]([{
+"id": "robo",
+"parametros": {
+"cartas_a_robar": 4,
+"condicion": ""
+}
+}, {
+"id": "descarte",
+"parametros": {
+"aleatorio": true,
+"cantidad": 1,
+"gatillo": "fin_turno"
+}
+}])
+efectos_ids = Array[String]([])
+efectos_parametros = Array[Dictionary]([])
+bonus_dano_calma = 0
+bonus_dano_agresiva = 0
+efectos_calma = Array[Dictionary]([])
+efectos_agresiva = Array[Dictionary]([])
+mejora_sobrescribe_efectos = false
+rareza = "poco_comun"
+descripcion_personalizada = "Roba 4. Descarta 1 al final del turno."
+tags = Array[String](["robo", "descarte", "flujo", "tempo"])

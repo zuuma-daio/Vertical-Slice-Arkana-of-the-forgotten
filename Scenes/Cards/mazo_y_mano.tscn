@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0k13tpxg8n5l"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/mazo_y_mano.gd" id="1_0o2uv"]
+[ext_resource type="PackedScene" uid="uid://cj6nn4x6paqq3" path="res://Scenes/Gameplay/Deck.tscn" id="2_0ayfg"]
+[ext_resource type="PackedScene" uid="uid://dvn7kwpww5pd6" path="res://Scenes/Gameplay/Mano.tscn" id="3_qv0hf"]
+[ext_resource type="Script" path="res://Scripts/UI/boton_jugar.gd" id="4_dftw6"]
+[ext_resource type="PackedScene" uid="uid://b7mu7aefeq1ql" path="res://Scenes/Gameplay/deck_visual.tscn" id="5_ncl2v"]
+[ext_resource type="PackedScene" uid="uid://dcp4tj285hw3q" path="res://Scenes/Gameplay/descarte_visual.tscn" id="6_1pjtd"]
+
+[node name="MazoYMano" type="Node2D"]
+script = ExtResource("1_0o2uv")
+
+[node name="Deck" parent="." instance=ExtResource("2_0ayfg")]
+nodo_mano = NodePath("../Mano")
+
+[node name="Mano" parent="." instance=ExtResource("3_qv0hf")]
+separacion_hover_grados = 4.0
+escala_hover = 1.5
+
+[node name="BotonJugar" type="Button" parent="."]
+offset_left = 1110.0
+offset_top = 510.0
+offset_right = 1234.0
+offset_bottom = 562.0
+text = "Jugar cartas"
+script = ExtResource("4_dftw6")
+
+[node name="DeckVisual" parent="." instance=ExtResource("5_ncl2v")]
+position = Vector2(150, 500)
+"posicion_diseño" = Vector2(150, 500)
+
+[node name="DescarteVisual" parent="." instance=ExtResource("6_1pjtd")]
+position = Vector2(150, 850)
+"posicion_diseño" = Vector2(150, 850)

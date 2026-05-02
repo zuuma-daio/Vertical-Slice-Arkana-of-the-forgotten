@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://bybbpx0yn84y3"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/enemigo.gd" id="1_53dsb"]
+[ext_resource type="Texture2D" uid="uid://drycrc6mqm0mh" path="res://sprites/oficiales/cartas pequeñas/card_enemy_pequeña.webp" id="2_ckd47"]
+
+[node name="Enemigo" type="Node2D"]
+position = Vector2(1.11111, 0.5)
+script = ExtResource("1_53dsb")
+
+[node name="SpriteEnemigo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-1.55554, -1)
+scale = Vector2(1, 1.047)
+texture = ExtResource("2_ckd47")
+
+[node name="Tarot" type="Label" parent="."]
+offset_left = -100.556
+offset_top = 100.0
+offset_right = 83.4445
+offset_bottom = 128.0
+theme_override_font_sizes/font_size = 20
+text = "La Fuerza"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nombre" type="Label" parent="."]
+offset_left = -100.556
+offset_top = 122.0
+offset_right = 83.4445
+offset_bottom = 150.0
+theme_override_font_sizes/font_size = 20
+text = "Gran terror, Orea"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Numero" type="Label" parent="."]
+offset_left = -139.556
+offset_top = -211.0
+offset_right = -104.556
+offset_bottom = -158.0
+theme_override_font_sizes/font_size = 38
+text = "XI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -141.0
+offset_top = 248.0
+offset_right = 123.0
+offset_bottom = 305.0
+color = Color(1, 0, 0, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.648, 0.585, 0.9, 1)
+step = 1.0
+value = 100.0
+
+[node name="LabelInmunidad" type="Label" parent="."]
+offset_left = -132.0
+offset_top = 309.0
+offset_right = -2.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 20
+text = "Inmunidad"
+horizontal_alignment = 2
+
+[node name="IconoInmunidad" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(45, 341)
+scale = Vector2(0.227, 0.227)

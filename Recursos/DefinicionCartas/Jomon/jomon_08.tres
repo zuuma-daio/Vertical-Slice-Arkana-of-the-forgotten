@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="DefinicionCarta" load_steps=2 format=3 uid="uid://jomon08"]
+
+[ext_resource type="Script" path="res://Scripts/Card/Resources/DefinicionCarta.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+id_carta = "jomon_08"
+nombre_carta = "Lectura del Enemigo"
+dano = 8
+faccion = "Jomon"
+efecto_descripcion = ""
+ruta_escena = "res://Scenes/Cards/culturas/CartaJomon.tscn"
+ruta_sprite_base = "res://sprites/Cartas/Jomon/8 Jomon peke.png"
+ruta_sprite_calma = ""
+ruta_sprite_agresiva = ""
+ruta_icono = ""
+efectos = Array[Dictionary]([{
+"id": "robo",
+"parametros": {
+"cartas_a_robar": 2,
+"condicion": ""
+}
+}, {
+"id": "reduccion",
+"parametros": {
+"duracion": 1,
+"estadistica": "dano_base",
+"objetivo": "enemigo",
+"reduccion": 2
+}
+}])
+efectos_ids = Array[String]([])
+efectos_parametros = Array[Dictionary]([])
+bonus_dano_calma = 0
+bonus_dano_agresiva = 0
+efectos_calma = Array[Dictionary]([])
+efectos_agresiva = Array[Dictionary]([])
+mejora_sobrescribe_efectos = false
+rareza = "raro"
+descripcion_personalizada = "Roba 2. Daño enemigo -2."
+tags = Array[String](["robo", "reduccion", "defensa", "flujo"])

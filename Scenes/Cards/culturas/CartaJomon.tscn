@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=3 uid="uid://kumds0vo2yui"]
+
+[ext_resource type="Texture2D" uid="uid://b3m6oukuoeww4" path="res://sprites/72738738-05b4-47bd-a7ab-adcda04d83cc.png" id="2_5gw3f"]
+[ext_resource type="Script" path="res://Scripts/Card/culturas/jomon.gd" id="2_t272g"]
+[ext_resource type="Texture2D" uid="uid://c01h6kx64akb1" path="res://sprites/oficiales/cartas pequeñas/card_heal_pequeña.webp" id="3_7wdna"]
+[ext_resource type="Texture2D" uid="uid://d3wxh0nhnxk5e" path="res://sprites/oficiales/iconos/palojomon.webp" id="4_qfjhl"]
+[ext_resource type="Texture2D" uid="uid://cf7u3ib7f65j4" path="res://sprites/FuegoAnim.webp" id="5_djd1o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh8gs"]
+size = Vector2(167, 232)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7uep"]
+atlas = ExtResource("5_djd1o")
+region = Rect2(166, 0, 165, 241)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slmke"]
+atlas = ExtResource("5_djd1o")
+region = Rect2(331, 0, 165, 241)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5p55"]
+atlas = ExtResource("5_djd1o")
+region = Rect2(1, 0, 165, 241)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s15x0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7uep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slmke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5p55")
+}],
+"loop": true,
+"name": &"quemar",
+"speed": 10.0
+}]
+
+[node name="CartaJomon" type="Node2D"]
+scale = Vector2(1.2, 1.2)
+script = ExtResource("2_t272g")
+NombreCarta = "Machi"
+FaccionCarta = "Jomon"
+EfectoCarta = "Recupera del descarte"
+escala_base = null
+
+[node name="BrilloFondo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.556863)
+position = Vector2(-2.49999, -6)
+scale = Vector2(0.198242, 0.335938)
+texture = ExtResource("2_5gw3f")
+
+[node name="SpriteCarta" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.736747, 0.74384)
+texture = ExtResource("3_7wdna")
+
+[node name="LabelNombre" type="Label" parent="SpriteCarta"]
+offset_left = -72.0
+offset_top = 61.0
+offset_right = 61.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(0.838628, 0.402695, 0.609026, 1)
+theme_override_font_sizes/font_size = 13
+text = "Machi"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelDaño" type="Label" parent="SpriteCarta"]
+offset_left = -103.0
+offset_top = -143.0
+offset_right = -57.0
+offset_bottom = -94.0
+theme_override_colors/font_color = Color(0.838628, 0.402695, 0.609026, 1)
+theme_override_font_sizes/font_size = 33
+text = "Machi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelFaccion" type="Label" parent="SpriteCarta"]
+offset_left = -69.2232
+offset_top = 79.3181
+offset_right = 57.7768
+offset_bottom = 96.3181
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 11
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelEfecto" type="RichTextLabel" parent="SpriteCarta"]
+offset_left = -68.0
+offset_top = 93.0
+offset_right = 58.0
+offset_bottom = 127.0
+theme_override_colors/default_color = Color(0.991164, 0.991164, 0.991164, 1)
+theme_override_constants/line_separation = -4
+theme_override_font_sizes/normal_font_size = 10
+text = "Jomon"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+tab_size = 1
+
+[node name="Palo" type="Sprite2D" parent="SpriteCarta"]
+position = Vector2(-80.5, -69)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("4_qfjhl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, -1)
+shape = SubResource("RectangleShape2D_qh8gs")
+
+[node name="FuegoAnimado" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-0.833332, -0.833332)
+scale = Vector2(1, 0.934)
+sprite_frames = SubResource("SpriteFrames_s15x0")
+animation = &"quemar"

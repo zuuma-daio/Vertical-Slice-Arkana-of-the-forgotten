@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="DefinicionCarta" load_steps=2 format=3 uid="uid://sumeria1a"]
+
+[ext_resource type="Script" path="res://Scripts/Card/Resources/DefinicionCarta.gd" id="1_def"]
+
+[resource]
+script = ExtResource("1_def")
+id_carta = "sumeria_09"
+nombre_carta = "Anulación"
+dano = 9
+faccion = "Sumeria"
+efecto_descripcion = ""
+ruta_escena = "res://Scenes/Cards/culturas/CartaSumeria.tscn"
+ruta_sprite_base = "res://sprites/Cartas/Sumeria/9 sumerio peke.png"
+ruta_sprite_calma = ""
+ruta_sprite_agresiva = ""
+ruta_icono = ""
+efectos = Array[Dictionary]([{
+"id": "reduccion",
+"parametros": {
+"duracion": 1,
+"estadistica": "dano_base",
+"objetivo": "enemigo",
+"reduccion": 8
+}
+}])
+efectos_ids = Array[String]([])
+efectos_parametros = Array[Dictionary]([])
+bonus_dano_calma = 0
+bonus_dano_agresiva = 0
+efectos_calma = Array[Dictionary]([])
+efectos_agresiva = Array[Dictionary]([])
+mejora_sobrescribe_efectos = false
+rareza = "raro"
+descripcion_personalizada = "Daño enemigo -8."
+tags = Array[String](["reduccion", "defensa", "alto"])
