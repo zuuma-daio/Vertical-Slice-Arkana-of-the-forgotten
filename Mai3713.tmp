@@ -1,0 +1,250 @@
+[gd_scene load_steps=18 format=3 uid="uid://cvh2vpxxkxhcd"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_jeuu0"]
+[ext_resource type="PackedScene" uid="uid://bybbpx0yn84y3" path="res://enemigo.tscn" id="2_dw8yu"]
+[ext_resource type="Texture2D" uid="uid://cy5v6mbeo12br" path="res://sprites/oficiales/Fondo.png" id="2_yxf4l"]
+[ext_resource type="Script" path="res://personaje.gd" id="3_c4hvp"]
+[ext_resource type="Texture2D" uid="uid://cr3ea5ymf43ad" path="res://sprites/almavida.webp" id="5_nk4fv"]
+[ext_resource type="PackedScene" uid="uid://c0k13tpxg8n5l" path="res://mazo_y_mano.tscn" id="6_svyoi"]
+[ext_resource type="Texture2D" uid="uid://6gvj2mkcvnah" path="res://sprites/oficiales/iconos/quemadura.png" id="7_o367g"]
+[ext_resource type="Script" path="res://ui_manager.gd" id="7_ual51"]
+[ext_resource type="Script" path="res://mensajes.gd" id="7_uw0gn"]
+[ext_resource type="Texture2D" uid="uid://btn6mvwkytq1t" path="res://sprites/oficiales/iconos/defensa.png" id="8_cxm8n"]
+[ext_resource type="PackedScene" uid="uid://cosg53und3jo2" path="res://instrucciones.tscn" id="9_dv2wx"]
+[ext_resource type="PackedScene" uid="uid://c4pv3ggpo57jn" path="res://PantallaReliquias.tscn" id="10_wg5p1"]
+[ext_resource type="PackedScene" uid="uid://doeggn0tcsfe7" path="res://Models/narrative_manager.tscn" id="11_ji3xw"]
+[ext_resource type="Texture2D" uid="uid://ckcxsmtxcs36r" path="res://sprites/darkhole.png" id="13_0pkh6"]
+[ext_resource type="PackedScene" uid="uid://bq3mlevfi1ou7" path="res://Models/combat_ai_manager.tscn" id="13_m3uo7"]
+[ext_resource type="Texture2D" uid="uid://dm3tqffhe2ts5" path="res://sprites/break.png" id="14_2xqhg"]
+
+[sub_resource type="SystemFont" id="SystemFont_cv3e5"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jeuu0")
+
+[node name="Fondo" type="TextureRect" parent="."]
+offset_left = -52.9999
+offset_top = -175.0
+offset_right = 971.0
+offset_bottom = 849.0
+scale = Vector2(1.96973, 1.39648)
+texture = ExtResource("2_yxf4l")
+
+[node name="Gameplay" type="Node2D" parent="."]
+
+[node name="Enemigo" parent="Gameplay" instance=ExtResource("2_dw8yu")]
+position = Vector2(753.889, 144.5)
+
+[node name="Personaje" type="Node2D" parent="Gameplay"]
+script = ExtResource("3_c4hvp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Gameplay/Personaje"]
+
+[node name="Vida" type="Control" parent="Gameplay/Personaje/CanvasLayer"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -395.0
+offset_top = 140.0
+offset_right = -176.0
+offset_bottom = 303.0
+grow_horizontal = 0
+
+[node name="Almavida" type="TextureRect" parent="Gameplay/Personaje/CanvasLayer/Vida"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 118.0
+offset_bottom = 108.0
+texture = ExtResource("5_nk4fv")
+expand_mode = 1
+
+[node name="Almavida2" type="TextureRect" parent="Gameplay/Personaje/CanvasLayer/Vida"]
+modulate = Color(0, 1, 1, 1)
+self_modulate = Color(0, 1, 1, 1)
+layout_mode = 0
+offset_left = 92.0
+offset_top = 1.0
+offset_right = 200.0
+offset_bottom = 108.0
+texture = ExtResource("5_nk4fv")
+expand_mode = 1
+
+[node name="MazoYMano" parent="Gameplay" instance=ExtResource("6_svyoi")]
+position = Vector2(1, 3)
+
+[node name="UIManager" type="CanvasLayer" parent="."]
+script = ExtResource("7_ual51")
+
+[node name="UI" type="Node2D" parent="UIManager"]
+
+[node name="PanelContainer" type="PanelContainer" parent="UIManager/UI"]
+offset_right = 611.0
+offset_bottom = 171.0
+
+[node name="Mensajes" type="RichTextLabel" parent="UIManager/UI/PanelContainer"]
+layout_mode = 2
+fit_content = true
+scroll_active = false
+script = ExtResource("7_uw0gn")
+
+[node name="LabelEscudo" type="Label" parent="UIManager/UI"]
+offset_right = 149.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 34
+text = "esq"
+
+[node name="LabelQuemadura" type="Label" parent="UIManager/UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 34
+text = "fuego"
+
+[node name="LabelDañoEnemigo" type="Label" parent="UIManager/UI"]
+offset_right = 193.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconoQuemadura" type="Sprite2D" parent="UIManager/UI"]
+position = Vector2(165, 64.5)
+scale = Vector2(0.203125, 0.191406)
+texture = ExtResource("7_o367g")
+
+[node name="IconoEscudo" type="Sprite2D" parent="UIManager/UI"]
+position = Vector2(164.5, 69.5938)
+scale = Vector2(0.0917969, 0.107056)
+texture = ExtResource("8_cxm8n")
+
+[node name="FinCombate" type="Node2D" parent="UIManager"]
+visible = false
+
+[node name="Fondo" type="ColorRect" parent="UIManager/FinCombate"]
+offset_right = 1924.0
+offset_bottom = 1088.0
+color = Color(0.20871, 0.20871, 0.20871, 1)
+
+[node name="Titulo" type="Label" parent="UIManager/FinCombate"]
+offset_left = 234.0
+offset_top = 363.0
+offset_right = 1711.0
+offset_bottom = 725.0
+theme_override_fonts/font = SubResource("SystemFont_cv3e5")
+theme_override_font_sizes/font_size = 156
+text = "Victoria"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonReset" type="Button" parent="UIManager/FinCombate"]
+offset_right = 152.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 32
+text = "Reiniciar"
+
+[node name="VentanaDescartes" type="Control" parent="UIManager"]
+visible = false
+custom_minimum_size = Vector2(1550, 850)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 206.0
+offset_top = 120.0
+offset_right = 1756.0
+offset_bottom = 980.0
+
+[node name="Panel" type="Panel" parent="UIManager/VentanaDescartes"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 1545.0
+offset_bottom = 851.0
+
+[node name="Titulo" type="Label" parent="UIManager/VentanaDescartes"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 1535.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 50
+text = "Cartas descartadas"
+horizontal_alignment = 1
+
+[node name="BotonCerrar" type="Button" parent="UIManager/VentanaDescartes"]
+layout_mode = 0
+offset_left = 1373.0
+offset_top = 1.0
+offset_right = 1538.0
+offset_bottom = 53.0
+text = "Cerrar (x)"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UIManager/VentanaDescartes"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 117.0
+offset_right = 1546.0
+offset_bottom = 843.0
+horizontal_scroll_mode = 0
+
+[node name="Contenedor" type="VBoxContainer" parent="UIManager/VentanaDescartes/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Instrucciones" parent="UIManager" instance=ExtResource("9_dv2wx")]
+visible = false
+
+[node name="PantallaReliquias" parent="UIManager" instance=ExtResource("10_wg5p1")]
+visible = false
+
+[node name="LabelFlotante" type="Label" parent="UIManager"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -135.0
+offset_right = 149.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="EfectosCombate" type="Control" parent="UIManager"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DannoJugador" type="TextureRect" parent="UIManager/EfectosCombate"]
+visible = false
+self_modulate = Color(0.359069, 0.359069, 0.359069, 1)
+layout_mode = 0
+offset_left = 323.0
+offset_top = -65.0
+offset_right = 1635.0
+offset_bottom = 780.0
+texture = ExtResource("13_0pkh6")
+expand_mode = 1
+
+[node name="AtaqueEnemigo" type="TextureRect" parent="UIManager/EfectosCombate"]
+visible = false
+modulate = Color(1, 0.054902, 0, 1)
+layout_mode = 0
+offset_left = 446.0
+offset_top = 547.0
+offset_right = 1470.0
+offset_bottom = 1233.0
+texture = ExtResource("14_2xqhg")
+expand_mode = 2
+
+[node name="Manager" type="Node2D" parent="."]
+
+[node name="NarrativeManager" parent="Manager" instance=ExtResource("11_ji3xw")]
+
+[node name="CombatAIManager" parent="Manager" instance=ExtResource("13_m3uo7")]
